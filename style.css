@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+JP&display=swap');
+
+:root {
+    --backColor: #DFC;
+    --highlightColor: #380;
+    --textColor: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --backColor: #343;
+        --highlightColor: #9C7;
+        --textColor: white;
+    }
+}
+
+body {
+    background-color: var(--backColor);
+    border: 0;
+    color: var(--textColor);
+    cursor: url(qnlycursor.cur), auto;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+header {
+    padding: 0.5em;
+}
+
+header h1 {
+    font-family: 'DotGothic16', sans-serif;
+    padding: 1em 0 0 1em;
+}
+
+.twitter {
+    background-color: #1D9BF0;
+    border-radius: 5em;
+    color: white;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    position: absolute;
+    right: 5%;
+    text-align: right;
+    text-decoration: none;
+    width: fit-content;
+}
+
+main {
+    margin: 0 10%;
+    width: 80%;
+}
+
+.list {
+    list-style-type: "🍌 ";
+    padding: 3%;
+}
+
+.list h3 {
+    margin-top: 3em;
+}
+
+.about {
+    line-height: 1.7;
+}
+
+.link {
+    color: var(--highlightColor);
+    text-decoration: none;
+}
+
+.playlists {
+    list-style-type: "🌟 ";
+    margin-left:5%;
+    padding: 0;
+}
+
+.playlists ul {
+    font-size: 1.5rem;
+    list-style: none;
+    padding-left: 5%;
+}
+
+.playlist a {
+    align-items: flex-end;
+    border-bottom: 0.2em solid var(--highlightColor);
+    color: var(--textColor);
+    display: flex;
+    font-size: 2rem;
+    margin-top: 2em;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.playlists .playlist .strikethrough {
+    text-decoration: line-through;
+}
+
+.gaisetsu {
+    border: 0.5em solid var(--highlightColor);
+    list-style: none;
+    margin: auto;
+    margin-bottom: 1em;
+    padding: 1em;
+    text-align: center;
+    width: fit-content;
+}
+
+.services {
+    margin: 0.5em 0 1em 0;
+}
+
+.twitter,.link,.listlink {
+    cursor: url(qnlycursorlink.cur), auto;
+}

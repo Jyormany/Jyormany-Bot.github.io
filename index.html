@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Jyormany bot 通知ステータス</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,-25" />
+        <link rel="icon" href="/favicon.ico" sizes="any">
+    </head>
+
+        <header>
+            <h1>Jyormany bot🌟 通知ステータス</h1>
+            <a class="twitter" href="https://twitter.com/Jyormany_bot" target="_blank">Jyormany bot🌟 (@Jyormany_bot)</a>
+            
+        </header>
+        <main>
+            <ul class="list">
+                <li class="about">
+                    <h3>Jyormany bot について</h3>
+                    <p>YouTubeチャンネル<a class="link" href="https://www.youtube.com/channel/UC5l8bnxxl26Q5PDG_jawcuw" target="_blank">「おんりー / ドズル社」</a>の一部の生配信を、Twitterでのツイートで通知するBotアカウントです。</p>
+                    <p>メンバーシップ限定配信の通知がYouTubeアプリから届かないことがあったため、2022年2月6日からドズル社ファンの Jyormany <a class="link" href="https://twitter.com/Jyormany" target="_blank">(@Jyormany)</a> が運営しています。</p>
+                    <p>通知対象として設定中の再生リスト<a class="link" href=#playlists>(⬇︎お知らせ中の再生リスト)</a>に新しく追加された配信枠のうち、配信前または配信中のものが見つかると、ツイートでお知らせします。<br>(設定されている再生リストに含まれない配信は通知することができません。ご了承ください。)</p>
+                    <p>通知対象の再生リストの変更など、Botに関するお知らせがある場合は、通常は次の配信通知ツイートの本文に含めてお知らせします。また、通知・お知らせ以外のツイートは致しません。</p>
+                </li>
+
+                <li>
+                    <h3 id="playlists">お知らせ中の再生リスト</h3>
+                    <ul class="playlists">
+                        <li class="playlist">
+                            <a class="strikethrough listlink" href="https://www.youtube.com/playlist?list=PLjQFGraZMNPUF2mYAteOGiC1Lwjgixoq4" target="_blank">
+                                生放送アーカイブ【マイクラ2】
+                                <span class="material-symbols-outlined">
+                                    open_in_new
+                                </span>
+                            </a>
+                        </li>
+                        <ul>
+                            <li style="text-decoration: line-through;">2022年2月6日から通知</li>
+                            <li>2022年7月16日停止</li>
+                        </ul>
+
+                        <li class="playlist">
+                            <a class="listlink" href="https://www.youtube.com/playlist?list=PLjQFGraZMNPXAbZKr3nnEUORUffVdsbmT" target="_blank">
+                                ドズル社メンバーと生放送アーカイブ
+                                <span class="material-symbols-outlined">
+                                    open_in_new
+                                </span>
+                            </a>
+                        </li>
+                        <ul>
+                            <li>2022年2月9日から通知</li>
+                        </ul>
+
+                        <li class="playlist">
+                            <a class="listlink"l href="https://www.youtube.com/playlist?list=PLjQFGraZMNPWgS_FdtyIaP_dgnTs-JMoo" target="_blank">
+                                【Apex】生放送アーカイブ
+                                <span class="material-symbols-outlined">
+                                    open_in_new
+                                </span>
+                            </a>
+                        </li>
+                        <ul>
+                            <li>2022年2月9日から通知</li>
+                        </ul>
+
+                        <li class="playlist">
+                            <a class="listlink" href="https://www.youtube.com/playlist?list=PLjQFGraZMNPULc3N-z8OUNOlCWn6z5SzK" target="_blank">
+                                ゲツクラワールドのすみっコ生放送アーカイブ【マイクラ】
+                                <span class="material-symbols-outlined">
+                                    open_in_new
+                                </span>
+                            </a>
+                        </li>
+                        <ul>
+                            <li>2022年3月8日から通知</li>
+                        </ul>
+
+                        <li class="playlist">
+                            <a class="listlink" href="https://www.youtube.com/playlist?list=PLjQFGraZMNPVrSvCQ2nB3-moDTIBEhXst" target="_blank">
+                                生放送アーカイブ
+                                <span class="material-symbols-outlined">
+                                    open_in_new
+                                </span>
+                            </a>
+                        </li>
+                        <ul>
+                            <li>2022年7月16日から通知</li>
+                        </ul>
+
+                        <li class="playlist">
+                            <a class="listlink" href="https://www.youtube.com/playlist?list=PLjQFGraZMNPVl-Ekr7yMZdvBduBuqfQS9" target="_blank">
+                                【マイクラ】生放送アーカイブ
+                                <span class="material-symbols-outlined">
+                                    open_in_new
+                                </span>
+                            </a>   
+                        </li>
+                        <ul>
+                            <li>2022年7月16日から通知</li>
+                        </ul>
+                    </ul>
+                </li>
+
+                <li>
+                    <h3>このBotの仕組みの概説</h3>
+                    <ol class="gaisetsu">
+                        <li>再生リストにある動画の情報をすべて取得</li>
+                        <li>⬇︎</li>
+                        <li>いままで通知していないか確認</li>
+                        <li>⬇︎</li>
+                        <li>非公開設定でなく、配信前または配信中のものに絞り込み</li>
+                        <li>⬇︎</li>
+                        <li>文章を組んでツイート</li>
+                    </ol>
+                    このプログラムを、以下のサービスを利用して約2分おきに実行しています。
+                    <ul class="services">
+                        <li>Google Cloud Platform (YouTube API)</li>
+                        <li>Twitter API</li>
+                        <li>Heroku / Heroku Scheduler</li>
+                        <li>GitHub</li>
+                    </ul>
+                    
+                    実行中のプログラム(Python)を<a class="link" href="https://github.com/Jyormany/YouTubePlaylistNotifier" target="_blank">GitHub</a>で公開しています。
+                </li>
+            </ul>
+        </main>
+    </body>
+</html>
