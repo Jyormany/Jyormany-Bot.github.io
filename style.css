@@ -4,6 +4,8 @@
     --backColor: #DFC;
     --highlightColor: #380;
     --textColor: black;
+    --infoBorderColor: #FC0;
+    --infoBackColor: #FE8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11,6 +13,8 @@
         --backColor: #343;
         --highlightColor: #9C7;
         --textColor: white;
+        --infoBorderColor: #FC5;
+        --infoBackColor: #A80;
     }
 }
 
@@ -53,9 +57,29 @@ main {
     width: 80%;
 }
 
+.info {
+    margin: 0;
+    margin-top: 3em;
+    padding: 1em;
+    border-style: solid;
+    border-width: 0.2em;
+    border-radius: 1em;
+    border-color: var(--infoBorderColor);
+    color: var(--textColor);
+    background-color: var(--infoBackColor);
+}
+
+.info p {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
 .list {
     list-style-type: "🍌 ";
     padding: 3%;
+    padding-top: 0;
 }
 
 .list h3 {
