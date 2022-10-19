@@ -140,3 +140,8 @@ main {
     color: var(--textColor);
     background-color: var(--infoBackColor);
 }
+
+.del {
+    text-decoration-line: line-through;
+    text-decoration-style: double;
+}
