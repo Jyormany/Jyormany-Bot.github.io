@@ -32,6 +32,7 @@ body {
 
 header {
     padding: 0.5em;
+    
 }
 
 header h1 {
@@ -39,17 +40,37 @@ header h1 {
     padding: 1em 0 0 1em;
 }
 
-.twitter {
-    background-color: #1D9BF0;
-    border-radius: 5em;
+.header-link {
+    margin-left: auto;
+    margin-right: 3%;
+}
+
+.header-link a {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
     color: white;
-    font-size: 1em;
-    padding: 0.5em 1em;
-    position: absolute;
-    right: 5%;
     text-align: right;
     text-decoration: none;
     width: fit-content;
+    font-size: 1em;
+    right: 5%;
+}
+
+.twitter {
+    background-color: #1D9BF0;
+    border-radius: 5em;
+    padding: 0.5em 1em;
+}
+
+.github {
+    background-color: #333;
+    border-radius: 0.2em 0.8em;
+    border-width: 0.13em;
+    border-color: #AAA;
+    border-style: solid;
+    margin-top: 0.5em;
+    padding: 0.3em 0.5em;
 }
 
 main {
@@ -57,11 +78,63 @@ main {
     width: 80%;
 }
 
-.info p {
-    font-size: 1.2rem;
-    line-height: 1.2;
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
+table {
+    border-collapse: collapse;
+    font-size: smaller;
+    margin: auto;
+}
+
+table th, table td {
+    border-bottom: 0.15em solid var(--highlightColor);
+    padding: 0.4em 1em;
+    text-align: center;
+}
+
+thead th {
+    padding-bottom: 0.2em;
+}
+
+.timeTable {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.timeTable th, .timeTable td {
+    padding: 0.5em 0;
+    border: none;
+    height: fit-content;
+}
+
+.timeTable th {
+    width: 2.5em;
+}
+
+.timeTable td {
+    text-align: center;
+}
+
+.onemin {
+    background-color: #FC5;
+    color: black;
+}
+
+.threemin {
+    background-color: #F83;
+    color: black;
+}
+
+details {
+    margin-top: 2em;
+    padding: 1em;
+    border-color: var(--highlightColor);
+    border-style: solid;
+    border-width: 0.2em;
+    border-radius: 1em;
+    list-style-type: none;
+}
+
+details .playlists {
+    margin: 0;
 }
 
 .list {
@@ -72,6 +145,7 @@ main {
 
 .list h3 {
     margin-top: 3em;
+    font-style: normal;
 }
 
 .about {
@@ -84,7 +158,6 @@ main {
 }
 
 .playlists {
-    list-style-type: "🌟 ";
     margin-left:5%;
     padding: 0;
 }
@@ -93,6 +166,10 @@ main {
     font-size: 1.5rem;
     list-style: none;
     padding-left: 5%;
+}
+
+.playlist {
+    list-style-type: "🌟 ";
 }
 
 .playlist a {
@@ -124,7 +201,7 @@ main {
     margin: 0.5em 0 1em 0;
 }
 
-.twitter,.link,.listlink {
+.twitter,.github,.link,.listlink,summary {
     cursor: url(qnlycursorlink.cur), auto;
 }
 
@@ -139,6 +216,13 @@ main {
     border-color: var(--infoBorderColor);
     color: var(--textColor);
     background-color: var(--infoBackColor);
+}
+
+.info p {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
 }
 
 .del {
