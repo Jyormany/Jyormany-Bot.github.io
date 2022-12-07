@@ -51,13 +51,13 @@ self.addEventListener('message', (e) => {
     }
     var pSize = 0.5;
     if (pxInterval < 0.1) {
-    pSize = pxInterval * 5;
+    pSize = pxInterval * 6;
     }
     if (pxInterval >= 0.1 && pxInterval < 0.2) {
-        pSize = pxInterval * 15 - 1;
+        pSize = pxInterval * 16 - 1;
     }
     if (pxInterval >= 0.2) {
-        pSize = pxInterval * 2.5 + 1.5;
+        pSize = pxInterval * 2.7 + 1.5;
     }
     switch (position) {
         case 'center':
