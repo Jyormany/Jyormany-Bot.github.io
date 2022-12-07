@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>画像をパーティクルに変換するかもわからん</title>
+        <meta name="description" content="PNG画像データをMinecraftでパーティクルとして表示させるコマンドに変換するサイトです。1つのピクセルを1つのパーティクルとして表示するコマンドに変換し、変換したコマンドをすべてmcfunction関数ファイルにまとめて出力します。制作:Jyormany（マイクラ実況YouTuberグループ[ドズル社]ファン）">
+        <meta property="og:title" content="画像をパーティクルに変換するかもわからん">
+        <meta property="og:url" content="https://jyormany.github.io/particle-converter">
+        <meta property="og:description" content="PNG画像データをパーティクルコマンドに変換するサイト">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../favicon.ico" sizes="any">
+    </head>
+    <main>
+        <header>
+            <h1>画像をパーティクルに変換するかもわからん</h1>
+            <h3><a href="https://twitter.com/Jyormany">@Jyormany</a></h3>
+            <h4><a href="https://twitter.com/Jyormany_bot">@Jyormany_bot / おんりーﾁｬﾝ配信通知bot</a></h4>
+        </header>
+        <body>
+            <div class="explanation">
+                <p>読み込まれたPNG画像データを、Minecraft内でパーティクルとして表示させる関数ファイル(.mcfunction)に変換するサイトです</p>
+                <p>このサイトではJavaScriptを使用しているため、すべての処理がブラウザで行われます。</p>
+                <p>パーティクルの表示位置は、^キャレットを使用したローカル座標で指定され、画像の指定の位置を実行位置（^ ^ ^）とし、パーティクルはローカルX・Y軸を含む面[^±x ^+y ^]に広がって表示されます。</p>
+                <p>生成された関数ファイルはデータパックに読み込み、コマンドブロックや他の関数ファイルなどを使用して、チェーン / ティックで走らせてください。</p>
+                <p>※1つのピクセルに対し1行のparticleコマンドが実行されるため、多すぎると重くなったり、関数が適用されなかったりすることがあります。また、サイトの使用・コマンドの実行は自己責任でお願いします（念のため...）</p>
+                <p>変換するデータ量が大きすぎるとページが落ちることがあります。落ちたり固まった場合は再読み込みしてください。</p>
+            </div>
+            <div class="converter">
+                <div class="group">
+                    <p class="bold">画像指定</p>
+                    <label for="file">変換するPNGファイルを指定</label>
+                    <input id="input-file" type="file" accept=".png">
+                    <p><a id="input-status"></a></p>
+                    <img id="display-input-img">
+                    <div class="input-file-check">
+                        <p class="bold">指定された画像のサイズ</p>
+                        <p id="img-size-disp">横 -px / 縦 -px</p>
+                    </div>
+                </div>
+                <div class="group">
+                    <label class="bold">元画像のリサイズ</label>
+                    <input id="resize-switch" type="checkbox">
+                    <input id="radio-resize-yoko" type="radio" name="resize-type" checked>横の長さで指定
+                    <input id="radio-resize-tate" type="radio" name="resize-type">縦の長さで指定
+                    <div>
+                        <label for="number" id="resize-type-text">横のピクセル数</label>
+                        <input id="input-resize-size" type="number" min="0" value="1000">
+                    </div>
+                    <p id="resized-size-text"></p>
+                </div>
+                <div class="input-type" class="group">
+                    <p class="bold">横または縦の表示サイズを指定</p>
+                    <input id="radio-yoko" type="radio" name="input-type" value="yoko" checked>横の長さで指定
+                    <input id="radio-tate" type="radio" name="input-type" value="tate">縦の長さで指定
+                </div>
+                <div class="group">
+                    <label>表示させるパーティクル全体の<a id="radio-change-text">横</a>サイズ〔ブロック〕</label>
+                    <input id="sizeInput" type="number" min="0" value="20">
+                    <p>（端が表示されないことがあるので〔30〕ﾌﾞﾛｯｸ以下推奨）</p>
+                    <p>〈変換サイズ = <a id="calculated-size">横 -ブロック / 縦 -ブロック // -ppb</a>〉</p>
+                    <p id="size-alert"></p>
+                    <p id="px-alert"></p>
+                </div>
+                <div class="group">
+                    <p class="bold">その他の設定</p>
+                    <div>
+                        <label>Speed</label>
+                        <input id="partSpeed" type="number" min="0" value="0.1">
+                    </div>
+                    <div>
+                        <label>Count(整数)</label>
+                        <input id="partCount" type="number" min="0" value="1">
+                    </div>
+                    <div>
+                        <label>Type</label>
+                        <select id="partType">
+                            <option>normal</option>
+                            <option>force</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p>表示基準位置</p>
+                        <div id="particle-position-disp-box">
+                            <img id="position-img">
+                            <div id="position-radio-box">
+                                <div id="position-radio">
+                                    <div id="position-radio-left">
+                                        <input id="position-left" type="radio" name="position">
+                                        <p>左</p>
+                                        <div id="position-left-img">
+                                            <img src="mc-face.png">
+                                            <p>実行者様</p>
+                                        </div>
+                                    </div>
+                                    <div id="position-radio-center">
+                                        <input id="position-center" type="radio" name="position">
+                                        <p>中央</p>
+                                        <div id="position-center-img">
+                                            <img src="mc-face.png">
+                                            <p>実行者様</p>
+                                        </div>
+                                    </div>
+                                    <div id="position-radio-right">
+                                        <input id="position-right" type="radio" name="position" checked>
+                                        <p>右</p>
+                                        <div id="position-right-img">
+                                            <img src="mc-face.png">
+                                            <p>実行者様</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div>
+                            <label>不透明度127以下のピクセルは非表示にする</label>
+                            <input id="hidden-px" type="checkbox" checked>
+                        </div>
+                        <div>
+                            <div>
+                                <label for="check">指定の色のピクセルを非表示にする</label>
+                                <input id="hidden-color-check" type="checkbox">
+                                <input id="hidden-color-picker" type="color" value="#FFFFFF">
+                            </div>
+                            <div>
+                                <p>指定色から非表示にする色への誤差許容範囲（RGB共通・10進数）</p>
+                                <label for="number">±</label>
+                                <input id="hidden-color-margin" type="number" value="0" min="0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <p class="bold">mcfunctionファイルを生成&保存</p>
+                    <p>変換が完了すると自動で保存が開始されます</p>
+                    <div class="run">
+                        <input id="convert-btn" type="button" value="はよ変換しろやぁ！">
+                    </div>
+                    <div>
+                        <a id="status-text"></a>
+                        <div id="status-bar"></div>
+                    </div>
+                    <input id="cancel-button" type="button" value="キャンセル">
+                </div>
+            </div>
+            <script src="script.js"></script>
+        </body>
+    </main>
+    <footer>
+        <div id="youtube">
+            <p>おすすめしたい 【マイクラ実況】 YouTubeチャンネル</p>
+            <div id="member">
+                <a id="ds" href="https://www.youtube.com/@dozle">ドズル社</a>
+                <a id="bj" href="https://www.youtube.com/@bonj55">ぼんじゅうる</a>
+                <a id="ql" href="https://www.youtube.com/@QnlyQ">おんりー</a>
+                <a id="of" href="https://www.youtube.com/@ORAFKUN">おらふくん</a>
+                <a id="mn" href="https://www.youtube.com/@ooharaMEN">おおはらMEN</a>
+            </div>
+        </div>
+    </footer>
+</html>
