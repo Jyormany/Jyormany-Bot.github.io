@@ -155,7 +155,8 @@ convertBtn.addEventListener('click', () => {
                 position = 'center';
             } else position = 'left';
         }
-        commands.push("#画像をパーティクルに変換するかも分からん@Jyormany");
+        commands.push("#「画像をパーティクルに変換するかも分からん」@Jyormany で作成");
+        commands.push("#>>>https://jyormany.github.io/particle-converter/");
         context.drawImage(img, 0, 0, canvas.width, canvas.height);
         context.width = canvas.width;
         context.height = canvas.height;
@@ -185,7 +186,7 @@ worker.addEventListener('message', (e) => {
             cancelButton.style.visibility = "hidden";
             statusText.textContent = "ファイル生成中";
             var convertedCommands = e.data;
-            if (convertedCommands.length <= 1) alert("エラーが発生しているかも分からん...\n生成されたファイルの中身をチェックするのは誰でもできますねぇ");
+            if (convertedCommands.length <= 2) alert("エラーが発生しているかも分からん...\n生成されたファイルの中身をチェックするのは誰でもできますねぇ");
             var blob = new Blob([convertedCommands.join("\n")], {type:"text/txt"});
             var link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
