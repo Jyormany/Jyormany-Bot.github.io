@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
         <title>画像をパーティクルに変換するかもわからん</title>
-        <meta name="description" content="PNG画像データをMinecraftでパーティクルとして表示させるコマンドに変換するサイトです。1つのピクセルを1つのパーティクルとして表示するコマンドに変換し、変換したコマンドをすべてmcfunction関数ファイルにまとめて出力します。制作:Jyormany（マイクラ実況YouTuberグループ[ドズル社]ファン）">
+        <meta name="description" content="画像データをMinecraftでパーティクルとして表示させるコマンドに変換するサイトです。1つのピクセルを1つのパーティクルとして表示するコマンドに変換し、変換したコマンドをすべてmcfunction関数ファイルにまとめて出力します。制作:Jyormany（マイクラ実況YouTuberグループ[ドズル社]ファン）">
         <meta property="og:title" content="画像をパーティクルに変換するかもわからん">
         <meta property="og:url" content="https://jyormany.github.io/particle-converter/">
-        <meta property="og:description" content="PNG画像データをパーティクルコマンドに変換するサイト">
+        <meta property="og:description" content="画像データをパーティクルコマンドに変換するサイト">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../favicon.ico" sizes="any">
         <meta name="google-site-verification" content="LfZGzitNKdwY7w5F5xYdn09xFiTvOFULUR_d08x_49A" />
@@ -20,7 +20,7 @@
         </header>
         <body>
             <div class="explanation">
-                <p>読み込まれたPNG画像データを、Minecraft内でパーティクルとして表示させる関数ファイル(.mcfunction)に変換するサイトです</p>
+                <p>読み込まれた画像データを、Minecraft内でパーティクルとして表示させる関数ファイル(.mcfunction)に変換するサイトです</p>
                 <p>このサイトではJavaScriptを使用しているため、すべての処理がブラウザで行われます。</p>
                 <p>パーティクルの表示位置は、^キャレットを使用したローカル座標で指定され、画像の指定の位置を実行位置（^ ^ ^）とし、パーティクルはローカルX・Y軸を含む面[^±x ^+y ^]に広がって表示されます。</p>
                 <p>生成された関数ファイルはデータパックに読み込み、コマンドブロックや他の関数ファイルなどを使用して、チェーン / ティックで走らせてください。</p>
@@ -30,8 +30,8 @@
             <div class="converter">
                 <div class="group">
                     <p class="bold">画像指定</p>
-                    <label for="file">変換するPNGファイルを指定</label>
-                    <input id="input-file" type="file" accept=".png">
+                    <label for="file">変換する画像ファイルを指定</label>
+                    <input id="input-file" type="file" accept="image/*">
                     <p><a id="input-status"></a></p>
                     <img id="display-input-img">
                     <div class="input-file-check">
@@ -116,7 +116,7 @@
                     </div>
                     <div class="group">
                         <div>
-                            <label>不透明度127以下のピクセルは非表示にする</label>
+                            <label>不透明度127以下のピクセルは非表示にする(PNG等)</label>
                             <input id="hidden-px" type="checkbox" checked>
                         </div>
                         <div>
