@@ -11,31 +11,44 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,-25" />
         <link rel="icon" href="/favicon.ico" sizes="any">
+        <meta name="theme-color" content="#586">
         <meta name="google-site-verification" content="LfZGzitNKdwY7w5F5xYdn09xFiTvOFULUR_d08x_49A" />
     </head>
     
     <header>
         <h1>Jyormany bot🌟 通知ステータス</h1>
-        <div class="header-link">
-            <a class="twitter" href="https://twitter.com/Jyormany_bot" target="_blank">Jyormany bot🌟 (@Jyormany_bot)</a>
-            <a class="github" href="https://github.com/Jyormany/YouTubePlaylistNotifier" target="_blank">GitHub</a>
-            <a class="last-update">最終更新 : 2023/1/9</a>
-            </div>
-            
-        </header>
-        <main>
-            
+        <div class="header-contents">
+
             <!---->
             <div class="info">
-                <p>検知させる再生リストを更新しました</p>
+                <p>Discordサーバーを開設しました！</p>
+                <p>ツイートと同じbot通知をDiscordで受けたり、ファン同士で情報を共有できます</p>
             </div>
-            
+                
+            <div class="header-link">
+                <div class="twitter" href="https://twitter.com/Jyormany_bot" target="_blank">
+                    <img src="Logo white.svg" alt="Twitter-Logo">
+                    <a>@Jyormany_bot</a>
+                </div>
+                <a class="discord" href="https://discord.gg/3QwHtX96ra" target="_blank"><img src="discord-logo-white.svg" alt="Discord-Logo"></a>
+                <div class="github" href="https://github.com/Jyormany/YouTubePlaylistNotifier" target="_blank">
+                    <img src="github-mark-white.svg" alt="Github-Logo">
+                    <a>GitHub</a>
+                </div>
+                <a class="last-update">最終更新 : 2023/1/11</a>
+            </div>
+        </div>
+    </header>
+
+    <body>
+        <main>
             <ul class="list">
 
                 <li class="about">
                     <h3>Jyormany bot について</h3>
-                    <p>YouTubeチャンネル<a class="link" href="https://www.youtube.com/channel/UC5l8bnxxl26Q5PDG_jawcuw" target="_blank">「おんりー / ドズル社」</a>の一部の生配信を、Twitterでのツイートで通知するBotアカウントです。</p>
+                    <p>YouTubeチャンネル<a class="link" href="https://www.youtube.com/channel/UC5l8bnxxl26Q5PDG_jawcuw" target="_blank">「おんりー / ドズル社」</a>の一部の生配信を、<a class="link" href="https://twitter.com/Jyormany_bot" target="_blank">Twitter</a>でのツイートと<a class="link" href="https://discord.gg/3QwHtX96ra" target="_blank">Discord</a>で通知するBotアカウントです。</p>
                     <p>メンバーシップ限定配信の通知がYouTubeアプリから届かないことがあったため、2022年2月6日からドズル社ファンの Jyormany <a class="link" href="https://twitter.com/Jyormany" target="_blank">(@Jyormany)</a> が、ほそぼそと運営しています。</p>
+                    <p>（ドズル社やおんりーﾁｬﾝなどによる[公式]でも[公認]でもありません。お問い合わせはJyormanyへお願いいたします。）</p>
                 </li>
 
                 <li>
@@ -230,7 +243,7 @@
                 <li>
                     <h3>このBotの仕組みの概説</h3>
                     <ol class="gaisetsu">
-                        <li>再生リストが更新されると変わるデータｃｃｃｃを取得</li>
+                        <li>再生リストが更新されると変わるデータを取得</li>
                         <li>⬇︎</li>
                         <li>前回取得したデータと比較し、違ったらリストの動画を取得</li>
                         <li>⬇︎</li>
@@ -238,7 +251,7 @@
                         <li>⬇︎</li>
                         <li>文章を組んでツイート</li>
                     </ol>
-                    このプログラムを、以下のサービスを利用して実行しています。
+                    <p>このプログラムを、以下のサービスを利用して実行しています。</p>
                     <ul class="services">
                         <li>Google Cloud ( YouTube Data API v3 / Cloud Scheduler )</li>
                         <li>Twitter API</li>
@@ -246,7 +259,7 @@
                         <li>Supabase</li>
                         <li>GitHub</li>
                     </ul>
-                    実行中のプログラム(Python)を<a class="link" href="https://github.com/Jyormany/YouTubePlaylistNotifier" target="_blank">GitHub</a>で公開しています。
+                    <p>実行中のプログラム(Python)を<a class="link" href="https://github.com/Jyormany/YouTubePlaylistNotifier" target="_blank">GitHub</a>で公開しています。</p>
                 </li>
             </ul>
         </main>
